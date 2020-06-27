@@ -1,0 +1,12 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<%= link_to("top","/users/sign_in") %>
+
+<%= link_to("matchingpage","/matchingpage") %>
+
+
+
+<%if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+<%end%>

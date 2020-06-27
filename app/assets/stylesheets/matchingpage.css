@@ -1,0 +1,844 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+
+p {
+  font-size: 1.6em;
+}
+
+/* 16px */
+li {
+  font-size: 1.6em;
+}
+
+/* 16px */
+h1, h2, h3, h4, p {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  margin: 0;
+}
+
+.mainpage {
+  display: flex;
+}
+
+.sidemenu {
+  position: relative;
+  background-color: #fabece;
+  width: 320px;
+  height: 100vh;
+  box-shadow: 2px 2px;
+}
+
+.sidemenu .myprofile_tab {
+  z-index: 10;
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  left: -320px;
+  transition: 0.3s ease-out;
+  height: 100vh;
+  width: 320px;
+  background-image: linear-gradient(162deg, #e74e42, #fa8616, #fbca25);
+}
+
+.sidemenu .myprofile_tab.open {
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-out;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar {
+  overflow: hidden;
+  width: 2px;
+  background: #fafafa;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar:horizontal {
+  height: 1px;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar-button {
+  display: none;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar-piece {
+  background: #eee;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar-piece:start {
+  background: #eee;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+.sidemenu .myprofile_tab::-webkit-scrollbar-corner {
+  background: #333;
+}
+
+.side_title {
+  text-align: center;
+  height: 5vh;
+  padding-top: 15px;
+}
+
+.side_title h2 {
+  font-size: 2em;
+}
+
+.menu_btn, .side_title {
+  z-index: 2;
+}
+
+.menu_btn, .close_btn {
+  position: absolute;
+  top: 10px;
+  left: 275px;
+  cursor: pointer;
+}
+
+.friend_index {
+  z-index: 1;
+  display: flex;
+  position: sticky;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  overflow-y: scroll;
+  height: 95vh;
+}
+
+.friend_index h2 {
+  margin: 2vh auto;
+  text-align: center;
+  width: 100%;
+}
+
+.friend_index::-webkit-scrollbar {
+  overflow: hidden;
+  width: 2px;
+  background: #fafafa;
+}
+
+.friend_index::-webkit-scrollbar:horizontal {
+  height: 1px;
+}
+
+.friend_index::-webkit-scrollbar-button {
+  display: none;
+}
+
+.friend_index::-webkit-scrollbar-piece {
+  background: #eee;
+}
+
+.friend_index::-webkit-scrollbar-piece:start {
+  background: #eee;
+}
+
+.friend_index::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+.friend_index::-webkit-scrollbar-corner {
+  background: #333;
+}
+
+.perImg_side {
+  height: 110px;
+  width: 110px;
+  background-color: black;
+  margin: 14px;
+}
+
+.menu_btn.open {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 0;
+}
+
+.profile {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.profile h2 {
+  font-size: 4rem;
+}
+
+.profile p {
+  font-size: 2.5rem;
+}
+
+.playing_game {
+  margin-top: 30px;
+}
+
+.game_category {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gamecate {
+  padding: 0.3em 0.3em;
+  margin: 1em 0.2em 0 0.5em;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #202020;
+  /*文字色*/
+  background: white;
+  border: solid 1px #202020;
+  /*線*/
+  border-radius: 20px;
+  /*角の丸み*/
+  align-self: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.active1 {
+  background: #ff7f50;
+  order: -1;
+  width: 90%;
+  margin: 0.5em 2em 0 2em;
+  font-size: 1.7rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.playtime {
+  margin-top: 10px;
+}
+
+.playtime h3 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.timecates {
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-start;
+  width: 90%;
+  margin: auto;
+  flex: 1;
+}
+
+.timecate {
+  padding: 0.3em 0.2em;
+  margin: 0 0.3em;
+  width: 5vw;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #202020;
+  background: white;
+  border: solid 1px #202020;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.active2 {
+  background: #ff7f50;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.platform {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.platform h3 {
+  font-size: 2.5rem;
+}
+
+.gameicon, .main_platform {
+  display: flex;
+}
+
+.fa-desktop {
+  margin-left: 30px;
+}
+
+.circle {
+  width: auto;
+  height: 45px;
+  opacity: 0;
+}
+
+.pc_icon {
+  width: auto;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px 0 20px 45px;
+  background-image: url("/images/pc.png");
+}
+
+.ps4_icon {
+  width: auto;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px 0 20px 45px;
+  background-image: url("/images/ps4.png");
+}
+
+.ns_icon {
+  width: auto;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px 0 20px 45px;
+  background-image: url("/images/Nintendoswitch.png");
+}
+
+.on {
+  opacity: 1;
+}
+
+.playstyle {
+  margin: 30px auto;
+}
+
+.playstyle p {
+  font-size: 2.5rem;
+}
+
+.playstyle-content {
+  display: flex;
+}
+
+.playstyle-content p {
+  font-size: 1.4em;
+  margin: 10px 25px;
+}
+
+input[type=range] {
+  box-sizing: border-box;
+  line-height: 4px;
+  height: 2em;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  width: 200px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: black;
+  border-color: transparent;
+  color: black;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 2em;
+  height: 2em;
+  margin-top: 0;
+  background-color: #16a085;
+  /*つまみの色*/
+  border-radius: 1em;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 2em;
+  height: 2em;
+  margin-top: 0;
+  background-color: #16a085;
+  border-radius: 1em;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  width: 2em;
+  height: 2em;
+  margin-top: 0;
+  background-color: #16a085;
+  border-radius: 1em;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type=range]:hover::-moz-range-thumb {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type=range]:hover::-ms-thumb {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type=range]:active::-webkit-slider-thumb {
+  border-color: #000000;
+}
+
+input[type=range]:active::-moz-range-thumb {
+  border-color: #ffffff;
+}
+
+input[type=range]:active::-ms-thumb {
+  border-color: #ffffff;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  height: 1em;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  /*スライダーの色*/
+  background-color: transparent;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  cursor: pointer;
+  height: 1em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+section div {
+  margin: auto;
+  width: 80%;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex: 1;
+  max-width: none;
+  height: 100vh;
+  width: auto;
+  flex-direction: column;
+  background-color: #d4faff;
+}
+
+.container .per_message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.4);
+  visibility: hidden;
+}
+
+.container .per_message.popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container .close_btn2 {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+}
+
+.per_message {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.chat-container {
+  width: 50%;
+  height: 70vh;
+  background-color: white;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+/*——————–
+ 吹き出しを作る
+——————–*/
+/* 全体のスタイル */
+.chat {
+  margin-bottom: 25px;
+}
+
+/* 左画像 */
+.chat-img-left {
+  margin: 0;
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: -70px;
+}
+
+/* 右画像 */
+.chat-img-right {
+  margin: 0;
+  float: right;
+  width: 60px;
+  height: 60px;
+  margin-left: -70px;
+}
+
+.chat figure img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  margin: 0;
+}
+
+/* 左からの吹き出しテキスト */
+.chat-text-right {
+  position: relative;
+  margin-left: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #eee;
+  margin-right: 12%;
+  float: left;
+}
+
+/* 右からの吹き出しテキスト */
+.chat-text-left {
+  position: relative;
+  margin-right: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #9cd6e7;
+  margin-left: 12%;
+  float: right;
+}
+
+p.chat-text {
+  margin: 0 0 2rem;
+  font-size: 1.4rem;
+}
+
+p.chat-text:last-child {
+  margin-bottom: 0;
+}
+
+/* 左の三角形を作る */
+.chat-text-right:before {
+  position: absolute;
+  content: '';
+  border: 8px solid transparent;
+  top: 8px;
+  left: -18px;
+}
+
+.chat-text-right:after {
+  position: absolute;
+  content: '';
+  border: 8px solid transparent;
+  border-right: 10px solid #eee;
+  top: 8px;
+  left: -17px;
+}
+
+/* 右の三角形を作る */
+.chat-text-left:before {
+  position: absolute;
+  content: '';
+  border: 8px solid transparent;
+  top: 8px;
+  right: -18px;
+}
+
+.chat-text-left:after {
+  position: absolute;
+  content: '';
+  border: 8px solid transparent;
+  border-left: 10px solid #9cd6e7;
+  top: 8px;
+  right: -17px;
+}
+
+/* 回り込み解除 */
+.chat:after, .chat:before {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.input_message {
+  font-size: 1.4px;
+  width: 45%;
+  height: 10vh;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.input_message:focus {
+  border-color: rgba(0, 206, 209, 0.6);
+  box-shadow: 0 0 8px 0 rgba(0, 206, 209, 0.6);
+}
+
+.send_button {
+  width: 5%;
+  height: 10vh;
+  display: inline-block;
+  border-radius: 10%;
+  /* 角丸       */
+  text-align: center;
+  /* 文字位置   */
+  cursor: pointer;
+  /* カーソル   */
+  padding: 12px 16px;
+  /* 余白       */
+  background: #999999;
+  /* 背景色     */
+  color: #ffffff;
+  /* 文字色     */
+  opacity: 0.9;
+  /* 透明度     */
+  box-shadow: 3px 3px 4px #666666;
+  /* 影の設定 */
+  border: 0;
+}
+
+.send_button:hover {
+  box-shadow: none;
+  /* カーソル時の影消去 */
+  opacity: 1;
+  /* カーソル時透明度 */
+}
+
+.wrap1 {
+  margin: auto;
+}
+
+.main_content1 {
+  height: 690px;
+  width: 470px;
+  padding-top: 10px;
+  background-image: url("/images/yuugiou.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main_Img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main_name {
+  width: 400px;
+  height: 40px;
+  margin: 20px auto 30px auto;
+  padding-top: 8px;
+  position: relative;
+}
+
+.main_name h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.stars {
+  display: flex;
+  margin: 0 auto;
+  width: 380px;
+}
+
+.staricon {
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 12.5px;
+  margin: 2px 3.5px;
+}
+
+.star {
+  padding: 2.5px 1.5px;
+  color: yellow;
+}
+
+.main_icon {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border: 1px solid;
+  margin-top: 15px;
+  border: outset 3px #3c3c3c;
+  box-shadow: 0 0 8px #3c3c3c;
+}
+
+.wrap2 {
+  width: 400px;
+  height: 230px;
+  margin: 15px auto;
+}
+
+.wrap2 p {
+  font-size: 1.5rem;
+}
+
+.main_Playgame {
+  width: 400px;
+  display: flex;
+  margin: 10px auto;
+}
+
+.main_gamecate {
+  padding: 0.2em 1em;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #202020;
+  /*文字色*/
+  background: #ff7f50;
+  border: solid 1px #202020;
+  /*線*/
+  border-radius: 20px;
+  /*角の丸み*/
+  align-self: center;
+  align-items: center;
+}
+
+.main_platform2 {
+  width: 150px;
+  display: flex;
+}
+
+.circle2 {
+  width: auto;
+  height: 25px;
+  opacity: 0;
+}
+
+.pc_icon2 {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px auto;
+  position: absolute;
+  right: 8px;
+  top: 1px;
+  background-image: url("/images/pc.png");
+  opacity: 1;
+}
+
+.ps4_icon2 {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px auto;
+  position: absolute;
+  right: 8px;
+  top: 1px;
+  background-image: url("/images/ps4.png");
+  opacity: 0;
+}
+
+.ns_icon2 {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px auto;
+  position: absolute;
+  right: 8px;
+  top: 1px;
+  background-image: url("/images/Nintendoswitch.png");
+  opacity: 0;
+}
+
+.main_playtime {
+  width: 400px;
+  display: flex;
+  margin: 10px auto;
+  text-align: center;
+  padding: 0 5px;
+  height: 30px;
+}
+
+.timecate2 {
+  padding: 0.3em 0.2em;
+  margin: 0 0.3em;
+  width: 5vw;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #202020;
+  background: #ff7f50;
+  border: solid 1px #202020;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.asa {
+  opacity: 0;
+}
+
+.hiru {
+  opacity: 0;
+}
+
+.yoru {
+  opacity: 1;
+}
+
+.sinnya {
+  opacity: 1;
+}
+
+.playstyle-slider {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.playstyle-content {
+  display: flex;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.playstyle-content p {
+  font-size: 1.4em;
+  margin: 1.5vh auto 0 auto;
+}
+
+.next-profile {
+  display: flex;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.like_btn, .skip_btn {
+  margin: 10px auto;
+}

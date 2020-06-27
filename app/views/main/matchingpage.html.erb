@@ -1,0 +1,221 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+<%= stylesheet_link_tag "matchingpage" %>
+<%= javascript_include_tag "matchingpage" %>
+
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
+
+
+<body>
+  <div class="mainpage">
+
+<!--サイドメニュー-->
+  <div class="sidemenu">
+      <div class="side_title">
+        <h2>フレンド一覧</h2>
+      </div>
+          <div class="menu_btn">
+            <i class="fas fa-bars fa-3x"></i>
+          </div>
+    <!--フレンド一覧-->
+    <div class="friend_index">
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+      <div class="perImg_side"></div>
+    </div>
+<!--左に閉じてるサイドメニュー　自分のプロフィール設定画面　-->
+ <div class="myprofile_tab">
+    <div class="close_btn">
+     <i class="fas fa-chevron-circle-left fa-3x"></i>
+    </div>
+      <div class="profile">
+        <h2>プロフィール</h2>
+      <div class="playing_game">
+        <p>プレイするゲーム</p>
+        <div class="game_category">
+          <div class="gamecate">Apex</div>
+          <div class="gamecate">Ark</div>
+          <div class="gamecate">黒い砂漠</div>
+          <div class="gamecate">CS:GO</div>
+          <div class="gamecate">Dota2</div>
+          <div class="gamecate">FF XIV</div>
+          <div class="gamecate">GTA V</div>
+          <div class="gamecate">LoL</div>
+          <div class="gamecate">MHW</div>
+          <div class="gamecate">osu!</div>
+          <div class="gamecate">Overwatch</div>
+          <div class="gamecate">PUBG</div>
+          <div class="gamecate">R6S</div>
+          <div class="gamecate">Sterdew Valley</div>
+          <div class="gamecate">VRchat</div>
+          <div class="gamecate">Valorant</div>
+        </div>
+      </div>
+      <div class="platform">
+      <h3>プラットフォーム</h3>
+      <div class="gameicon">
+        <figure class="pc_icon">
+          <figcaption>
+            <%= image_tag("/images/circle.png", class:"circle")%>
+            </figcaption>
+        </figure>
+        <figure class="ps4_icon">
+          <figcaption>
+            <%= image_tag("/images/circle.png", class:"circle")%>
+            </figcaption>
+        </figure>
+        <figure class="ns_icon">
+          <figcaption>
+            <%= image_tag("/images/circle.png", class:"circle")%>
+            </figcaption>
+        </figure>
+      </div>
+    </div>
+      <div class="playtime">
+         <h3>プレイ時間</h3>
+         <div class="timecates">
+           <div class="timecate">朝</div>
+           <div class="timecate">昼</div>
+           <div class="timecate">夜</div>
+           <div class="timecate">深夜</div>
+         </div>
+      </div>
+      <div class="playstyle">
+        <p>プレイスタイル</p>
+        <div class="playstyle-content">
+          <p>わいわいしたい</p>　<p>勝ちにこだわる</p>
+        </div>
+          <input type="range" min="0" max="4" step="1" list="tlist">　　　<!--レンジスライダー-->
+          <datalist id="tlist">
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+          </datalist>
+
+    </div>
+    </div>
+</div>
+</div>
+<!--　メインページ　-->
+
+  <!--　　　相手のプロフィール　　　-->
+<div class="container">
+  <%if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+  <%end%>
+
+  <div class="wrap1">
+<div class="main_content1">
+    <div class="main_name">
+    <h3>りんぼす</h3>  　　　　<!-- 相手の名前-->
+    <figure class="pc_icon2">
+    </figure>
+    <figure class="ps4_icon2">
+    </figure>
+    <figure class="ns_icon2">
+    </figure>
+    </div>
+  <div class="main_Img">
+    <%= image_tag('/images/rinboss.jpg', class:"main_icon")%>
+  </div>
+    <!-- DBから引っ張ってきて表示する-->
+    <div class="wrap2">
+  <div class="main_Playgame">
+    <p>ゲーム:</p>
+    <div class="main_gamecate">LoL</div>
+    <div class="main_gamecate">PUBG</div>
+    <div class="main_gamecate">Apex</div>   <!--DBから情報を受けて変更する -->
+  </div>
+  <div class="main_playtime">
+    <p>時間:</p>
+    <div class="timecate2 asa">朝</div>
+    <div class="timecate2 hiru">昼</div>
+    <div class="timecate2 yoru">夜</div>
+    <div class="timecate2 sinnya">深夜</div>
+  </div>
+  <div class="main_Playstyle">
+    <p>スタイル:</p>
+    <div class="playstyle-content">
+      <p>わいわいしたい</p>　<p>勝ちにこだわる</p>
+    </div>
+    <div class="playstyle-slider">
+          <input type="range" min="0" max="4" step="1">
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="next-profile">
+<div class="like_btn">
+  <!-- 　↓リンク先は後で変更する　　 -->
+  <%= link_to("/likes/good",{method: "post"}) do %>
+    <i class="far fa-heart fa-5x"></i>
+  <% end %>
+  </div>
+  <div class="skip_btn">
+    <%= link_to("/likes/dislike", {method: "post"}) do %>
+    <i class="fas fa-times fa-5x"></i>
+    <% end %>
+  </div>
+  </div>
+</div>
+
+  <!--メッセージ画面-->
+  <div class="per_message">
+    <div class="per_name">                        <!--チャット相手の名前-->
+      <h2>りんぼす</h2>
+    </div>
+    <div class="close_btn2">
+    <i class="fas fa-chevron-circle-left fa-2x"></i>
+    </div>
+
+
+<!--      チャット欄       -->
+ <div class="chat-container">
+   <!-- チャットが入力されたら、ここに返して表示するようにする。-->
+    <div class="chat">
+     <figure class="chat-img-left">　
+       <%= image_tag('/images/rinboss.jpg') %>  <!--チャット相手のユーザーアイコン　-->
+     </figure>
+     <div class="chat-text-right">
+       <p class="chat-text">     <!--相手のチャット内容-->
+         はじめまして
+       </p>
+     </div>
+    </div>
+    <div class="chat">
+    <figure class="chat-img-right">
+    <%= image_tag('/images/shinaro.jpg') %>        <!--自分のユーザーアイコン-->
+  </figure>
+  <div class="chat-text-left">
+   <p class="chat-text">      <!--自分のチャット内容-->
+     初めまして。
+   </p>
+ </div>
+  </div>
+</div>
+<!-- 　　チャット入力部分　　　-->
+    <form method="post" onsubmit="return false;">
+    <input type="text" class= "input_message" placeholder="Enter + shift で送信">
+    <button class="send_button" type="submit">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+    </form>
+</div>
+  <div class="black-background"></div>
+</div>
+
+
+</div>
+</body>
