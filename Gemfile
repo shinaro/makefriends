@@ -57,7 +57,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'bootstrap', '~> 4.1.3' # 記事下の関連URLからバージョンを確認して導入
+gem 'bootstrap', '~> 4.3.1' # 記事下の関連URLからバージョンを確認して導入
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.2.0'
 gem 'devise'
